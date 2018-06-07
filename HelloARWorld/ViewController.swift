@@ -125,36 +125,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, SceneViewController {
             if(zombie.idle) {
                 zombie.playWalkingAnimation()
             }
-//                zombie.idle = false
-//                zombie.transition = true
-//                playAnimation(key: "transition")
-//            } else if(zombie.transition) {
-//                zombie.idle = false
-//                zombie.transition = false
-//                zombie.walking = true
-//                playAnimation(key: "walking")
-//            } else {
-//                zombie.idle = true
-//                stopAnimation(key: "walking")
-//            }
-//            zombie.idle = !zombie.idle
             return
         }
     }
-    
-    func playAnimation(key: String) {
-        // Add the animation to start playing it right away
-//        let sequence = SCNAction.sequence(zombie.animations[key]!) // will be executed one by one
-//        let node = SCNNode()
-//        node.runAction(sequence, completionHandler:nil)
-        
-        sceneView.scene.rootNode.addAnimation(zombie.animations[key]!, forKey: key)
-    }
-    
-    func stopAnimation(key: String) {
-        // Stop the animation with a smooth transition
-        sceneView.scene.rootNode.removeAnimation(forKey: key, blendOutDuration: CGFloat(1))
-    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
